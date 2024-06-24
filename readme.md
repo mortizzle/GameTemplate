@@ -1,1 +1,3 @@
-Basic framework for a winforms game written in C#
+Basic framework for a winforms game written in C#, to be used as a template for anyone who wants to play in this space.
+This is a stripped down version of a BMX game I was playing with, which in turn was inspired by Trains.NET from all around smart cookie Dave Wengier https://github.com/davidwengier/
+Pretty sure Dave also helped with the basics of the BMX game too, so full credit to him for the smarts behind 90% of this.
