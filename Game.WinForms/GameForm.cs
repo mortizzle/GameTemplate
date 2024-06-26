@@ -33,10 +33,7 @@ namespace Game
             _skView.MouseClick += HandleMouseClick;
             _skView.KeyPress += HandleKeyPress;
 
-            _applicationState = new ApplicationState
-            {
-                GameState = new GameState(),
-            };
+            _applicationState = ApplicationState.Initialise();
 
             _ = PresentLoop();
             
@@ -61,10 +58,10 @@ namespace Game
         {
             while (_runRenderLoop)
             {
-                _applicationState = _applicationState with { GameState = _gameEngine.UpdateGameState(_applicationState.GameState)};
+                _applicationState = _applicationState with { EngineState = _gameEngine.UpdateEngineState(_applicationState.EngineState)};
                 _skView.Invalidate();
 
-                await Task.Delay(_gameEngine.GetTickLength(_applicationState.GameState)).ConfigureAwait(true);
+                await Task.Delay(_gameEngine.GetTickLength(_applicationState.EngineState)).ConfigureAwait(true);
             }
         }
 

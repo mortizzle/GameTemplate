@@ -2,7 +2,7 @@
 
 namespace Game.Core.Models
 {
-    public record GameState
+    public record EngineState
     {
         public bool Paused { get; set; }
         public long GameTicks { get; set; }

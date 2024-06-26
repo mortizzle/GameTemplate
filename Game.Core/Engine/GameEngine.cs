@@ -7,19 +7,19 @@ namespace Game.Core
 {
     internal class GameEngine : IGameEngine
     {
-        public GameState UpdateGameState(GameState gameState)
+        public EngineState UpdateEngineState(EngineState engineState)
         {
-            if (gameState.Paused) return gameState;
+            if (engineState.Paused) return engineState;
 
-            return gameState with
+            return engineState with
             {
-                GameTicks = gameState.GameTicks + 1
+                GameTicks = engineState.GameTicks + 1
             };
         }
 
-        public int GetTickLength(GameState gameState)
+        public int GetTickLength(EngineState engineState)
         {
-            return gameState.GameSpeed switch
+            return engineState.GameSpeed switch
             {
                 GameSpeed.Snail => 500,
                 GameSpeed.Slow => 150,
